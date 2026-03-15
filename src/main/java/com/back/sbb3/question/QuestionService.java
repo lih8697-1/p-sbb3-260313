@@ -27,13 +27,12 @@ public class QuestionService {
         Optional<Question> question = this.questionRepository.findById(id);
         if (question.isPresent()) {
             return question.get();
-        }
-        else {
+        } else {
             throw new DataNotFoundException("question not found");
         }
     }
 
-    public Page<Question> getList(int page){
+    public Page<Question> getList(int page) {
         List<Sort.Order> sorts = new ArrayList<>();
         sorts.add(Sort.Order.desc("createDate"));
         Pageable pageable = PageRequest.of(page, 10, Sort.by(sorts));
