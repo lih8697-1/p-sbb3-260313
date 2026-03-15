@@ -1,6 +1,7 @@
 package com.back.sbb3.answer;
 
 import com.back.sbb3.question.Question;
+import com.back.sbb3.user.SiteUser;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,4 +23,7 @@ public class Answer {
 
     @ManyToOne
     private Question question;
+
+    @ManyToOne
+    private SiteUser author;
 }
